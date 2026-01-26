@@ -1,0 +1,53 @@
+
+import React, { useEffect, useRef } from 'react';
+
+const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
+    const bottomRef = useRef(null);
+
+    useEffect(() => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [traceSteps, currentStepIndex]);
+
+    return (
+        <div className="trace-table-container paper-shadow">
+            <div className="table-header">Trace Table</div>
+            <table className="handwritten-table">
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Line</th>
+                        {columns.map((col) => (
+                            <th key={col.key}>{col.label}</th>
+                        ))}
+                        <th>Note</th>
+                        <th>Output/Return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {traceSteps.map((step, index) => {
+                        if (index > currentStepIndex) return null;
+
+                        return (
+                            <tr key={index} className={index === currentStepIndex ? 'current-row' : ''}>
+                                <td>{index + 1}</td>
+                                <td>{step.line}</td>
+                                {columns.map((col) => (
+                                    <td key={col.key}>
+                                        {step.vars[col.key] !== undefined ? step.vars[col.key] : '-'}
+                                    </td>
+                                ))}
+                                <td>{step.note}</td>
+                                <td>{step.output}</td>
+                            </tr>
+                        );
+                    })}
+                    <tr ref={bottomRef} />
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+export default TraceTable;
