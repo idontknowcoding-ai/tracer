@@ -2,13 +2,13 @@
 import React, { useEffect, useRef } from 'react';
 
 const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
-    const bottomRef = useRef(null);
+    const currentRowRef = useRef(null);
 
     useEffect(() => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        if (currentRowRef.current) {
+            currentRowRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
-    }, [traceSteps, currentStepIndex]);
+    }, [currentStepIndex]);
 
     return (
         <div className="trace-table-container paper-shadow">
@@ -30,7 +30,11 @@ const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
                         if (index > currentStepIndex) return null;
 
                         return (
-                            <tr key={index} className={index === currentStepIndex ? 'current-row' : ''}>
+                            <tr
+                                key={index}
+                                className={index === currentStepIndex ? 'current-row' : ''}
+                                ref={index === currentStepIndex ? currentRowRef : null}
+                            >
                                 <td>{index + 1}</td>
                                 <td>{step.line}</td>
                                 {columns.map((col) => (
@@ -43,7 +47,6 @@ const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
                             </tr>
                         );
                     })}
-                    <tr ref={bottomRef} />
                 </tbody>
             </table>
         </div>

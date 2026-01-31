@@ -24,10 +24,10 @@ body {
 .app-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* Changed to row for Sidebar */
 }
 
 header h1 {
@@ -278,7 +278,14 @@ button:disabled {
   transform: scale(1);
 }
 
-.stack-frame-exit-active {
-  opacity: 0;
-  transform: translateX(100px) rotate(10deg);
+.content-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure main-content takes full width available in the wrapper */
+.main-content {
+  width: 100%;
 }
