@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CodeDisplay = ({ code, currentLine }) => {
   const lines = code.split('\n');
 

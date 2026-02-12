@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
   const currentRowRef = useRef(null);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: currentStepIndex triggers the scroll when the active row changes
   useEffect(() => {
     if (currentRowRef.current) {
       currentRowRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -30,7 +31,7 @@ const TraceTable = ({ traceSteps, currentStepIndex, columns }) => {
 
             return (
               <tr
-                key={`step-${index}`}
+                key={step.id}
                 className={index === currentStepIndex ? 'current-row' : ''}
                 ref={index === currentStepIndex ? currentRowRef : null}
               >

@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import { createRef } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const CallStackVisualizer = ({ stack }) => {

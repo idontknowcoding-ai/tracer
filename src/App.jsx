@@ -26,6 +26,7 @@ if (num > 5) {
     columns: [{ key: 'num', label: 'num' }],
     traceSteps: [
       {
+        id: 'if-else-1',
         line: 1,
         vars: { num: 10 },
         stack: ['main'],
@@ -33,6 +34,7 @@ if (num > 5) {
         output: '',
       },
       {
+        id: 'if-else-2',
         line: 2,
         vars: { num: 10 },
         stack: ['main'],
@@ -40,6 +42,7 @@ if (num > 5) {
         output: '',
       },
       {
+        id: 'if-else-3',
         line: 3,
         vars: { num: 10 },
         stack: ['main'],
@@ -62,6 +65,7 @@ console.log(sum);`,
     // For loop doesn't really have a call stack in the same way, but we can just pass empty or main
     traceSteps: [
       {
+        id: 'loop-1',
         line: 1,
         vars: { sum: 0, i: undefined },
         stack: ['main'],
@@ -69,6 +73,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-2',
         line: 2,
         vars: { sum: 0, i: 0 },
         stack: ['main'],
@@ -76,6 +81,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-3',
         line: 3,
         vars: { sum: 0, i: 0 },
         stack: ['main'],
@@ -83,6 +89,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-4',
         line: 2,
         vars: { sum: 0, i: 1 },
         stack: ['main'],
@@ -90,6 +97,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-5',
         line: 3,
         vars: { sum: 1, i: 1 },
         stack: ['main'],
@@ -97,6 +105,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-6',
         line: 2,
         vars: { sum: 1, i: 2 },
         stack: ['main'],
@@ -104,6 +113,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-7',
         line: 3,
         vars: { sum: 3, i: 2 },
         stack: ['main'],
@@ -111,6 +121,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-8',
         line: 2,
         vars: { sum: 3, i: 3 },
         stack: ['main'],
@@ -118,6 +129,7 @@ console.log(sum);`,
         output: '',
       },
       {
+        id: 'loop-9',
         line: 5,
         vars: { sum: 3, i: 3 },
         stack: ['main'],
@@ -136,6 +148,7 @@ while (count < 2) {
     columns: [{ key: 'count', label: 'count' }],
     traceSteps: [
       {
+        id: 'while-1',
         line: 1,
         vars: { count: 0 },
         stack: ['main'],
@@ -143,6 +156,7 @@ while (count < 2) {
         output: '',
       },
       {
+        id: 'while-2',
         line: 2,
         vars: { count: 0 },
         stack: ['main'],
@@ -150,6 +164,7 @@ while (count < 2) {
         output: '',
       },
       {
+        id: 'while-3',
         line: 3,
         vars: { count: 0 },
         stack: ['main'],
@@ -157,6 +172,7 @@ while (count < 2) {
         output: '0',
       },
       {
+        id: 'while-4',
         line: 4,
         vars: { count: 1 },
         stack: ['main'],
@@ -164,6 +180,7 @@ while (count < 2) {
         output: '',
       },
       {
+        id: 'while-5',
         line: 2,
         vars: { count: 1 },
         stack: ['main'],
@@ -171,6 +188,7 @@ while (count < 2) {
         output: '',
       },
       {
+        id: 'while-6',
         line: 3,
         vars: { count: 1 },
         stack: ['main'],
@@ -178,6 +196,7 @@ while (count < 2) {
         output: '1',
       },
       {
+        id: 'while-7',
         line: 4,
         vars: { count: 2 },
         stack: ['main'],
@@ -185,6 +204,7 @@ while (count < 2) {
         output: '',
       },
       {
+        id: 'while-8',
         line: 2,
         vars: { count: 2 },
         stack: ['main'],
@@ -203,6 +223,7 @@ do {
     columns: [{ key: 'i', label: 'i' }],
     traceSteps: [
       {
+        id: 'do-while-1',
         line: 1,
         vars: { i: 0 },
         stack: ['main'],
@@ -210,6 +231,7 @@ do {
         output: '',
       },
       {
+        id: 'do-while-2',
         line: 3,
         vars: { i: 0 },
         stack: ['main'],
@@ -217,6 +239,7 @@ do {
         output: '0',
       },
       {
+        id: 'do-while-3',
         line: 4,
         vars: { i: 1 },
         stack: ['main'],
@@ -224,6 +247,7 @@ do {
         output: '',
       },
       {
+        id: 'do-while-4',
         line: 5,
         vars: { i: 1 },
         stack: ['main'],
@@ -253,6 +277,7 @@ console.log(dayName);`,
     ],
     traceSteps: [
       {
+        id: 'switch-1',
         line: 1,
         vars: { day: 2, dayName: undefined },
         stack: ['main'],
@@ -260,6 +285,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-2',
         line: 2,
         vars: { day: 2, dayName: undefined },
         stack: ['main'],
@@ -267,6 +293,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-3',
         line: 3,
         vars: { day: 2, dayName: undefined },
         stack: ['main'],
@@ -274,6 +301,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-4',
         line: 4,
         vars: { day: 2, dayName: undefined },
         stack: ['main'],
@@ -281,6 +309,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-5',
         line: 7,
         vars: { day: 2, dayName: undefined },
         stack: ['main'],
@@ -288,6 +317,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-6',
         line: 8,
         vars: { day: 2, dayName: 'Tue' },
         stack: ['main'],
@@ -295,6 +325,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-7',
         line: 9,
         vars: { day: 2, dayName: 'Tue' },
         stack: ['main'],
@@ -302,6 +333,7 @@ console.log(dayName);`,
         output: '',
       },
       {
+        id: 'switch-8',
         line: 13,
         vars: { day: 2, dayName: 'Tue' },
         stack: ['main'],
@@ -321,6 +353,7 @@ console.log(factorial(3));`,
     traceSteps: [
       // Initial Call
       {
+        id: 'recursion-1',
         line: 5,
         vars: { n: undefined },
         stack: [],
@@ -330,6 +363,7 @@ console.log(factorial(3));`,
 
       // factorial(3)
       {
+        id: 'recursion-2',
         line: 1,
         vars: { n: 3 },
         stack: ['factorial(3)'],
@@ -337,6 +371,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-3',
         line: 2,
         vars: { n: 3 },
         stack: ['factorial(3)'],
@@ -344,6 +379,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-4',
         line: 3,
         vars: { n: 3 },
         stack: ['factorial(3)'],
@@ -353,6 +389,7 @@ console.log(factorial(3));`,
 
       // factorial(2)
       {
+        id: 'recursion-5',
         line: 1,
         vars: { n: 2 },
         stack: ['factorial(3)', 'factorial(2)'],
@@ -360,6 +397,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-6',
         line: 2,
         vars: { n: 2 },
         stack: ['factorial(3)', 'factorial(2)'],
@@ -367,6 +405,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-7',
         line: 3,
         vars: { n: 2 },
         stack: ['factorial(3)', 'factorial(2)'],
@@ -376,6 +415,7 @@ console.log(factorial(3));`,
 
       // factorial(1)
       {
+        id: 'recursion-8',
         line: 1,
         vars: { n: 1 },
         stack: ['factorial(3)', 'factorial(2)', 'factorial(1)'],
@@ -383,6 +423,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-9',
         line: 2,
         vars: { n: 1 },
         stack: ['factorial(3)', 'factorial(2)', 'factorial(1)'],
@@ -390,6 +431,7 @@ console.log(factorial(3));`,
         output: '',
       },
       {
+        id: 'recursion-10',
         line: 2,
         vars: { n: 1 },
         stack: ['factorial(3)', 'factorial(2)', 'factorial(1)'],
@@ -399,6 +441,7 @@ console.log(factorial(3));`,
 
       // Unwind to factorial(2)
       {
+        id: 'recursion-11',
         line: 3,
         vars: { n: 2 },
         stack: ['factorial(3)', 'factorial(2)'],
@@ -408,6 +451,7 @@ console.log(factorial(3));`,
 
       // Unwind to factorial(3)
       {
+        id: 'recursion-12',
         line: 3,
         vars: { n: 3 },
         stack: ['factorial(3)'],
@@ -417,6 +461,7 @@ console.log(factorial(3));`,
 
       // Back to main
       {
+        id: 'recursion-13',
         line: 5,
         vars: { n: undefined },
         stack: [],
@@ -450,11 +495,6 @@ function App() {
     setCurrentStep(0);
   };
 
-  const handleScenarioChange = (e) => {
-    setScenarioKey(e.target.value);
-    setCurrentStep(0);
-  };
-
   return (
     <div className="app-container">
       <Sidebar scenarios={DATA} currentScenario={scenarioKey} onSelectScenario={setScenarioKey} />
@@ -472,13 +512,13 @@ function App() {
             </div>
 
             <div className="controls">
-              <button onClick={handleReset} disabled={currentStep === 0}>
+              <button type="button" onClick={handleReset} disabled={currentStep === 0}>
                 Reset
               </button>
-              <button onClick={handlePrev} disabled={currentStep === 0}>
+              <button type="button" onClick={handlePrev} disabled={currentStep === 0}>
                 Previous
               </button>
-              <button onClick={handleNext} disabled={currentStep === scenario.traceSteps.length - 1}>
+              <button type="button" onClick={handleNext} disabled={currentStep === scenario.traceSteps.length - 1}>
                 Next Step
               </button>
             </div>
