@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const CodeDisplay = ({ code, currentLine }) => {
@@ -12,10 +11,7 @@ const CodeDisplay = ({ code, currentLine }) => {
           const lineNumber = index + 1;
           const isActive = lineNumber === currentLine;
           return (
-            <div 
-              key={index} 
-              className={`code-line ${isActive ? 'active-line' : ''}`}
-            >
+            <div key={lineNumber} className={`code-line ${isActive ? 'active-line' : ''}`}>
               <span className="line-number">{lineNumber}</span>
               <span className="line-content">{line}</span>
             </div>
